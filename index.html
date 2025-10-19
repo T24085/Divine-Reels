@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divine Reels</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/style.css">
+</head>
+<body>
+    <header class="hero">
+        <nav class="nav">
+            <div class="logo">Divine Reels</div>
+            <div class="nav-actions">
+                <button class="btn btn-secondary" data-open="#submissionModal">Log in</button>
+                <button class="btn btn-primary" data-open="#paywallModal">Join the Fellowship</button>
+            </div>
+        </nav>
+        <div class="hero-content">
+            <h1>Shorts Crafted with the Spirit</h1>
+            <p>Discover Bible-inspired reels brought to life with Sora, designed to nourish your soul in under a minute.</p>
+            <div class="hero-actions">
+                <a class="btn btn-primary" href="#reels">Watch Reels</a>
+                <button class="btn btn-outline" data-open="#submissionModal">Share Your Story</button>
+            </div>
+        </div>
+        <div class="scroll-indicator">Scroll to explore ⬇</div>
+    </header>
+
+    <main>
+        <section id="reels" class="section reels-section">
+            <div class="section-heading">
+                <h2>Featured Divine Reels</h2>
+                <p>Revisit timeless stories with a modern rhythm and inspired visuals.</p>
+            </div>
+            <div class="reels-grid">
+                <article class="reel-card">
+                    <div class="reel-thumb" style="background-image: url('https://images.unsplash.com/photo-1526285759904-71d1170ed2ac?auto=format&fit=crop&w=600&q=80');"></div>
+                    <div class="reel-info">
+                        <h3>Genesis 1 — In the Beginning</h3>
+                        <p>A fast-flowing creation story that celebrates the birth of light and life.</p>
+                        <button class="btn btn-ghost">Play 45s</button>
+                    </div>
+                </article>
+                <article class="reel-card">
+                    <div class="reel-thumb" style="background-image: url('https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=600&q=80');"></div>
+                    <div class="reel-info">
+                        <h3>David &amp; Goliath</h3>
+                        <p>Feel the courage pulse as David takes a stand with nothing but faith and a sling.</p>
+                        <button class="btn btn-ghost">Play 58s</button>
+                    </div>
+                </article>
+                <article class="reel-card premium">
+                    <div class="reel-thumb" style="background-image: url('https://images.unsplash.com/photo-1542332213-5f6c1ab7853c?auto=format&fit=crop&w=600&q=80');"></div>
+                    <div class="reel-info">
+                        <h3>Sermon on the Mount (Extended)</h3>
+                        <p>Available for subscribers. Unlock the full 5-minute cinematic retelling of Jesus’ teachings.</p>
+                        <button class="btn btn-primary" data-open="#paywallModal">Subscribe to Watch</button>
+                    </div>
+                    <span class="badge">Premium</span>
+                </article>
+            </div>
+        </section>
+
+        <section class="section story-section">
+            <div class="section-heading">
+                <h2>Tell Biblical Stories Together</h2>
+                <p>Each reel is created with prayerful reflection and Sora’s storytelling power.</p>
+            </div>
+            <div class="story-grid">
+                <div class="story-card">
+                    <h3>Inspired by Scripture</h3>
+                    <p>We distill passages into engaging, short-form reels that highlight grace, hope, and redemption.</p>
+                </div>
+                <div class="story-card">
+                    <h3>Community Driven</h3>
+                    <p>Submit your ideas and collaborate with creators who love sharing the Gospel.</p>
+                </div>
+                <div class="story-card">
+                    <h3>Extending the Message</h3>
+                    <p>Longer, immersive reels are available to subscribers who support the mission.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section support-section" id="support">
+            <div class="support-content">
+                <h2>Fuel the Mission</h2>
+                <p>Your generosity keeps the reels coming and helps us amplify the Word across the world.</p>
+                <button class="btn btn-primary" data-open="#donationModal">Donate</button>
+            </div>
+        </section>
+
+        <section class="section subscription-section" id="subscription">
+            <div class="subscription-content">
+                <h2>Unlock Longer Reels</h2>
+                <p>Subscribe to access extended biblical retellings, behind-the-scenes devotionals, and advanced reel creation tools.</p>
+                <ul class="benefits">
+                    <li>Access to all premium reels and longer formats</li>
+                    <li>Early access to new Sora collaborations</li>
+                    <li>Monthly live Q&amp;A and study resources</li>
+                </ul>
+                <div class="subscription-actions">
+                    <button class="btn btn-primary" data-open="#paywallModal">Subscribe Monthly</button>
+                    <button class="btn btn-outline" data-open="#paywallModal">Learn More</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-logo">Divine Reels</div>
+        <p>Sharing the Gospel, one reel at a time.</p>
+        <div class="footer-links">
+            <a href="#reels">Reels</a>
+            <a href="#subscription">Subscription</a>
+            <a href="#support">Donate</a>
+        </div>
+        <p class="footer-copy">&copy; <span id="year"></span> Divine Reels. All rights reserved.</p>
+    </footer>
+
+    <div class="modal" id="paywallModal" aria-hidden="true" role="dialog" aria-labelledby="paywallTitle">
+        <div class="modal-backdrop" data-close></div>
+        <div class="modal-content">
+            <button class="modal-close" data-close>&times;</button>
+            <h3 id="paywallTitle">Become a Subscriber</h3>
+            <p>Posting reels longer than 60 seconds requires a Divine Reels subscription.</p>
+            <ol>
+                <li>Choose a plan that suits your ministry goals.</li>
+                <li>Unlock advanced storytelling templates and premium audio.</li>
+                <li>Share your extended testimony with the world.</li>
+            </ol>
+            <button class="btn btn-primary" id="paywallSubscribeBtn">Subscribe Now</button>
+        </div>
+    </div>
+
+    <div class="modal" id="donationModal" aria-hidden="true" role="dialog" aria-labelledby="donationTitle">
+        <div class="modal-backdrop" data-close></div>
+        <div class="modal-content">
+            <button class="modal-close" data-close>&times;</button>
+            <h3 id="donationTitle">Support Divine Reels</h3>
+            <p>Choose a donation amount to keep the ministry growing.</p>
+            <div class="donation-options">
+                <button class="btn btn-ghost" data-amount="$10">$10</button>
+                <button class="btn btn-ghost" data-amount="$25">$25</button>
+                <button class="btn btn-ghost" data-amount="$50">$50</button>
+                <button class="btn btn-ghost" data-amount="Custom">Custom</button>
+            </div>
+            <button class="btn btn-primary" id="donationCheckoutBtn">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <div class="modal" id="submissionModal" aria-hidden="true" role="dialog" aria-labelledby="submissionTitle">
+        <div class="modal-backdrop" data-close></div>
+        <div class="modal-content">
+            <button class="modal-close" data-close>&times;</button>
+            <h3 id="submissionTitle">Share a Divine Reel</h3>
+            <form class="submission-form">
+                <label>
+                    Reel Title
+                    <input type="text" name="title" placeholder="Ex: Faith in the Fire" required>
+                </label>
+                <label>
+                    Duration (seconds)
+                    <input type="number" name="duration" placeholder="e.g. 45" min="15" max="600" required>
+                </label>
+                <label>
+                    Scripture Inspiration
+                    <input type="text" name="scripture" placeholder="Daniel 3:16-18">
+                </label>
+                <label>
+                    Reel Description
+                    <textarea name="description" rows="3" placeholder="Share the heart behind your reel..."></textarea>
+                </label>
+                <button type="submit" class="btn btn-primary">Submit for Review</button>
+                <p class="form-footnote">Reels over 60 seconds will prompt a subscription upgrade.</p>
+            </form>
+        </div>
+    </div>
+
+    <noscript>
+        <style>
+            body::before {
+                content: 'Divine Reels works best with JavaScript enabled to open donation and subscription dialogs.';
+                display: block;
+                background: #2c2750;
+                color: #fff;
+                padding: 1rem;
+                text-align: center;
+            }
+        </style>
+    </noscript>
+    <script src="./assets/script.js" defer></script>
+</body>
+</html>
