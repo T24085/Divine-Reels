@@ -1,0 +1,433 @@
+:root {
+    --bg-dark: #0c0d1a;
+    --bg-secondary: #14162b;
+    --accent: #e0aaff;
+    --accent-strong: #a56fff;
+    --text-primary: #ffffff;
+    --text-secondary: #cfd2ff;
+    --card-bg: rgba(18, 21, 42, 0.85);
+    --border: rgba(255, 255, 255, 0.08);
+    --shadow: 0 20px 50px rgba(10, 8, 30, 0.35);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: radial-gradient(circle at top, rgba(160, 134, 255, 0.15), transparent 55%),
+                linear-gradient(180deg, #0a0b16 0%, #06070f 100%);
+    color: var(--text-primary);
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 999px;
+    font-weight: 600;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease;
+    text-decoration: none;
+}
+
+.btn-primary {
+    background: linear-gradient(120deg, var(--accent) 0%, var(--accent-strong) 100%);
+    color: var(--bg-dark);
+    box-shadow: 0 12px 30px rgba(160, 134, 255, 0.35);
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.btn-outline {
+    background: transparent;
+    border-color: rgba(224, 170, 255, 0.5);
+    color: var(--accent);
+}
+
+.btn-ghost {
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--text-primary);
+    border-color: transparent;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn-primary:hover {
+    box-shadow: 0 16px 35px rgba(160, 134, 255, 0.45);
+}
+
+.hero {
+    position: relative;
+    min-height: 90vh;
+    padding: 2.5rem clamp(1rem, 5vw, 4rem) 6rem;
+    background: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(9, 10, 23, 0.75);
+    backdrop-filter: blur(4px);
+}
+
+.hero > * {
+    position: relative;
+    z-index: 1;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.nav-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.hero-content {
+    max-width: 600px;
+    margin-top: 8vh;
+}
+
+.hero-content h1 {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.scroll-indicator {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.95rem;
+    letter-spacing: 0.08em;
+}
+
+.section {
+    padding: clamp(3rem, 8vw, 6rem) clamp(1rem, 6vw, 5rem);
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: clamp(2rem, 6vw, 4rem);
+    max-width: 640px;
+    margin-inline: auto;
+}
+
+.section-heading h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 0.75rem;
+}
+
+.section-heading p {
+    color: var(--text-secondary);
+}
+
+.reels-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.reel-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+}
+
+.reel-card .reel-thumb {
+    padding-top: 130%;
+    background-size: cover;
+    background-position: center;
+}
+
+.reel-info {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.reel-info h3 {
+    font-size: 1.15rem;
+}
+
+.reel-info p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.reel-card .badge {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    padding: 0.35rem 0.75rem;
+    border-radius: 999px;
+    background: rgba(224, 170, 255, 0.9);
+    color: var(--bg-dark);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+}
+
+.reel-card.premium::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(160deg, rgba(13, 8, 30, 0.3) 0%, rgba(166, 111, 255, 0.35) 100%);
+    pointer-events: none;
+}
+
+.story-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+}
+
+.story-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 1.75rem;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+}
+
+.story-card h3 {
+    margin-bottom: 0.75rem;
+}
+
+.support-section {
+    background: linear-gradient(135deg, rgba(47, 29, 95, 0.9), rgba(19, 23, 51, 0.9));
+    text-align: center;
+    border-block: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.subscription-section {
+    background: radial-gradient(circle at top right, rgba(166, 111, 255, 0.2), transparent 55%);
+}
+
+.subscription-content {
+    max-width: 680px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.benefits {
+    list-style: none;
+    margin: 1.5rem 0;
+    color: var(--text-secondary);
+    display: grid;
+    gap: 0.75rem;
+}
+
+.subscription-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.footer {
+    padding: 3rem 1.5rem;
+    text-align: center;
+    background: #06070f;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer-logo {
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+    color: var(--text-secondary);
+}
+
+.footer-links a:hover {
+    color: var(--accent);
+}
+
+.footer-copy {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.85rem;
+}
+
+.modal {
+    position: fixed;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    padding: 1.5rem;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 50;
+}
+
+.modal[aria-hidden="false"] {
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(6, 7, 15, 0.8);
+    backdrop-filter: blur(4px);
+}
+
+.modal-content {
+    position: relative;
+    background: #111326;
+    border-radius: 20px;
+    padding: clamp(1.75rem, 3vw, 2.5rem);
+    border: 1px solid rgba(224, 170, 255, 0.2);
+    max-width: 420px;
+    width: min(420px, 100%);
+    display: grid;
+    gap: 1.25rem;
+    color: var(--text-secondary);
+}
+
+.modal-content h3 {
+    color: var(--text-primary);
+    margin-bottom: 0.25rem;
+}
+
+.modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.donation-options {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+}
+
+.donation-options .selected {
+    background: linear-gradient(120deg, var(--accent) 0%, var(--accent-strong) 100%);
+    color: var(--bg-dark);
+}
+
+.submission-form {
+    display: grid;
+    gap: 1rem;
+}
+
+.submission-form label {
+    display: grid;
+    gap: 0.35rem;
+    font-size: 0.95rem;
+}
+
+.submission-form input,
+.submission-form textarea {
+    width: 100%;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(9, 10, 23, 0.8);
+    color: var(--text-primary);
+    padding: 0.65rem 0.85rem;
+    font-family: inherit;
+}
+
+.submission-form input:focus,
+.submission-form textarea:focus {
+    outline: 2px solid rgba(224, 170, 255, 0.45);
+}
+
+.form-footnote {
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding-bottom: 4rem;
+    }
+
+    .nav-actions {
+        gap: 0.5rem;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero {
+        padding: 1.75rem 1.25rem 4rem;
+    }
+
+    .nav-actions {
+        display: none;
+    }
+
+    .hero-content {
+        margin-top: 4rem;
+    }
+}
